@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Appenders>
+        <!-- CONSOLE -->
+        <Console name="console-log" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %logger{36} - %msg%n}{FATAL=white, ERROR=Blinking bright red, WARN=Yellow, INFO=Blue, DEBUG=green, TRACE=blue}"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+
+        <Logger name="org.eclipse.jetty" level="error">
+            <AppenderRef ref="console-log"/>
+        </Logger>
+
+        <Root level="info">
+            <appender-ref ref="console-log"/>
+        </Root>
+
+    </Loggers>
+</Configuration>
