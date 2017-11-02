@@ -12,14 +12,4 @@ public class RoboticHooverException extends Exception {
         super();
         this.error = error;
     }
-
-    public RoboticHooverException(String message, ErrorEnum error) {
-        super(message);
-        this.error = error;
-    }
-
-    public RoboticHooverException(String message, Throwable cause, ErrorEnum error) {
-        super(message, cause);
-        this.error = error;
-    }
 }

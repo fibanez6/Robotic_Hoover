@@ -7,10 +7,12 @@ import com.fibanez.util.ErrorEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class RoboticHooverError {
+public class RoboticHooverError implements Serializable{
 
     @JsonProperty("error")
     private String error;

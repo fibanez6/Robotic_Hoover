@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 public class RoboticHooverApplication {
 
-    private static Logger logger = LoggerFactory.getLogger(RoboticHooverApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(RoboticHooverApplication.class);
 
     public static void main(String[] args) throws Exception {
 

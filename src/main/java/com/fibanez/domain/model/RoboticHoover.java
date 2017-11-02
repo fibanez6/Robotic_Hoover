@@ -1,6 +1,7 @@
 package com.fibanez.domain.model;
 
 import lombok.Data;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,11 +15,13 @@ public class RoboticHoover {
 
     private final Logger logger = LoggerFactory.getLogger(RoboticHoover.class);
 
-    private final Point hooverPosition;
+    @NonNull
+    private Point hooverPosition;
 
-    private final Room room;
+    @NonNull
+    private Room room;
 
-    private int cleanedPatchCounter;
+    private int cleanedPatchCounter = 0;
 
     public void executeInstructions(List<Character> instructions) {
         logger.info("Moving to: " + instructions.toString());

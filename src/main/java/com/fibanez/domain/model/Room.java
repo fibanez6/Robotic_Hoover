@@ -2,25 +2,33 @@ package com.fibanez.domain.model;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.awt.*;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Entity
 @Data
 public class Room {
+
+    @Id
+    @GeneratedValue
+    private long id;
 
     private final Point roomDimension;
 
     private AtomicInteger stainsCleanedCount = new AtomicInteger(0);
 
-    boolean roomArray[][];
+    private boolean roomArray[][];
 
     public Room(Point roomDimension, Set<Point> stainPositions) {
         this.roomDimension = roomDimension;
 
         this.roomArray = new boolean[(int)roomDimension.getX()] [(int)roomDimension.getY()];
 
-        stainPositions.forEach(patch -> this.roomArray[(int)patch.getX()] [(int)patch.getY()] = true);
+        stainPositions.forEach(stain -> this.roomArray[(int)stain.getX()] [(int)stain.getY()] = true);
     }
 
     public boolean isSpottedPosition(Point hooverPos) {
