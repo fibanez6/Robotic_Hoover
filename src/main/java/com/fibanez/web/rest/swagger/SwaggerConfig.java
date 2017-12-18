@@ -24,7 +24,6 @@ public class SwaggerConfig {
     @Bean
     public Docket petApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("robot-hoover-api")
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.fibanez.web.rest.controller"))
                 .paths(PathSelectors.any())
